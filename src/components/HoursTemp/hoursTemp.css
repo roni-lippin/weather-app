@@ -1,0 +1,42 @@
+
+
+ul {
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 15;
+    animation-name: slideIn;
+    animation-duration: 2s;
+    grid-area: 1 / 1 / 2 / 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    max-width: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+
+#dark {
+    background-color:  rgba(22, 57, 103, 0.8);
+}
+
+#light {
+    background-color:  rgb(80, 121, 179, 0.7);
+}
+
+
+
+ul:hover {
+    transform: translateY(-5px); /* Move the widget slightly up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-400px);
+    } to {
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,55 @@
+.city {
+    border-bottom: solid rgb(141, 189, 244) 0.5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 70px;
+}
+
+.city:focus {
+    background-color: rgb(138, 160, 182);
+    border-bottom: none;
+    border-radius: 5px;
+}
+
+
+.city:focus .city-info, .city:focus .city-temp-current {
+    color: white; /* Change text color on focus/click */
+}
+
+.city:focus .situation, .city:focus .min-max-temp {
+    color: rgb(242, 243, 245); /* Change text color on focus/click */
+}
+
+.city-info {
+    align-self: center;
+    grid-area: 1 / 1 / 2 / 2; /* Row 1, Column 1 (top left) */
+}
+
+.situation {
+    align-self: center;
+    grid-area: 2 / 1 / 3 / 2; /* Row 2, Column 1 (bottom left) */
+    font-size: 12px;
+}
+
+.city-temp-current {
+    align-self: center;
+    grid-area: 1 / 2 / 2 / 3; /* Row 1, Column 2 (top right) */
+    font-size: 25px;
+}
+
+.min-max-temp {
+    align-self: center;
+    grid-area: 2 / 2 / 3 / 3; /* Row 2, Column 2 (bottom right) */
+    font-size: 12px;
+}
+
+.remove-city {
+    background: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 16px;
+    position: fixed;
+}
+

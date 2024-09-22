@@ -1,0 +1,42 @@
+.condition-days-forecast {
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 15;
+    animation-name: slideIn;
+    animation-duration: 2s;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+/* Light mode styles */
+.condition-days-forecast.light {
+    background-color: rgb(80, 121, 179, 0.7);
+}
+
+/* Dark mode styles */
+.condition-days-forecast.dark {
+    background-color: rgba(22, 57, 103, 0.8);
+}
+
+/* Hover effect */
+.condition-days-forecast:hover {
+    transform: translateY(-5px); /* Move the widget slightly up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 1px;
+}
+
+/* Keyframe animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-400px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,5 @@
+.main-content {
+    margin-left: 350px; /* This leaves space for the sidebar */
+    flex-grow: 1; /* Makes the content expand */
+    margin-right: 10px;
+}

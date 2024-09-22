@@ -1,0 +1,35 @@
+.weather {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+}
+
+.links {
+    display: flex; 
+    gap: 20px;
+}
+
+a {
+    color: white;
+}
+
+.header {
+    display: grid;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 350px; /* Offsets the header 150px from the left */
+    margin-right: 10px;
+}
+
+.header.light {
+    background-color: rgb(80, 121, 179, 0.7);
+}
+
+.header.dark {
+    background-color: rgba(22, 57, 103, 0.8);
+}

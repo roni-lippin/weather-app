@@ -1,0 +1,28 @@
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+.search:hover {
+    transform: translateY(-5px);
+}
+
+input {
+    border-radius: 5px;
+    color: white;
+    border: 2px  rgb(156, 190, 238) solid;
+    opacity: 70%;
+}
+
+#dark {
+    background-color:  #021e44;
+}
+
+#light {
+    background-color:  #164990;
+}
+
+input::placeholder {
+    color:white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

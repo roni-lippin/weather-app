@@ -1,0 +1,71 @@
+.settings-page {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-left: 330px;
+}
+
+.settings-page.dark {
+    background-image: url('../darkImage.jpg');
+}
+
+.settings-page.light {
+    background-image: url('https://www.huaweicentral.com/wp-content/uploads/2022/06/Weather.jpg');
+}
+
+.settings-form {
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add some padding */
+    margin: 0 auto; /* Center the form */
+    max-width: 400px; /* Limit the width of the form */
+}
+
+.settings-page label {
+    display: block; /* Stack labels above inputs */
+    margin: 15px 0 5px; /* Space out labels */
+    font-weight: bold; /* Make labels bold */
+}
+
+.settings-page select, 
+.settings-page input[type="text"], 
+.settings-page input[type="checkbox"] {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding for inputs */
+    border-radius: 5px; /* Rounded corners for inputs */
+    border: 1px solid #ccc; /* Light border */
+    font-size: 16px; /* Font size for inputs */
+}
+
+.settings-page input[type="text"] {
+    background-color: white; /* Background for the text input */
+    color: black; /* Text color for the input */
+}
+
+.settings-page input[type="checkbox"] {
+    width: auto; /* Reset width for checkbox */
+    margin-left: 10px; /* Space from the label */
+}
+
+button.save-settings-button {
+    background-color: #c4daf2; /* Button color */
+    color: rgb(0, 0, 0); /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 16px; /* Font size for button */
+    margin-top: 15px; /* Space above button */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button.save-settings-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

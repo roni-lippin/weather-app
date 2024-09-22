@@ -1,0 +1,51 @@
+.condition-wind-map {
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 15px; /* Fixed font-size */
+    animation-name: slideIn;
+    animation-duration: 2s;
+    grid-area: 2 / 4 / 4 / 5;
+}
+
+@media screen and (max-width: 600px) and (min-width: 300px) {
+    .condition-wind-map {
+        grid-area: 2 / 3 / 4 / 4;
+    }
+}
+
+.condition-wind-map.light {
+    background-color: rgba(80, 121, 179, 0.7); /* Fixed the color format */
+}
+
+.condition-wind-map.dark {
+    background-color: rgba(22, 57, 103, 0.8); /* Fixed the color format */
+}
+
+.wind-map-container {
+    height: 85%;  /* Full height to fit within the grid */
+    width: 100%;   /* Full width */
+    min-height: 180px; /* Ensure a minimum height for visibility */
+    flex-grow: 1;
+    z-index: 1; /* Ensure proper stacking */
+    position: relative;
+}
+
+#wind-map {
+    z-index: 0; /* Ensure the map appears correctly */
+}
+
+.condition-wind-map:hover {
+    transform: translateY(-5px); /* Move the widget slightly up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-400px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

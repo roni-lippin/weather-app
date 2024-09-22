@@ -1,0 +1,32 @@
+
+
+.condition:hover {
+    transform: translateY(-5px); /* Move the widget slightly up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-400px);
+    } to {
+        transform: translateX(0);
+    }
+}
+
+.condition {
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 15;
+    animation-name: slideIn;
+    animation-duration: 2s;
+}
+
+.condition.light {
+    background-color:  rgb(80, 121, 179, 0.7);
+}
+
+.condition.dark {
+    background-color: rgba(22, 57, 103, 0.8);
+}
