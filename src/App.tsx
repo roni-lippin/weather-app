@@ -6,7 +6,6 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Setting from './components/Setting/Setting';
 
-
 const API_KEY = 'a6013d4da00e4e93a7a110941240409';
 
 function App() {
@@ -17,10 +16,9 @@ function App() {
   const [cities, setCities] = useState<string[]>([localStorage.getItem('defaultCity') || 'london'])
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
 
-
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true); // Set loading to true when fetching starts
+      setLoading(true);
       try {
         const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?q=${city}&key=${API_KEY}&days=10`);
         if (!response.ok) {
@@ -28,11 +26,22 @@ function App() {
         }
         const result = await response.json();
         setData(result);
+
+        // Check the current hour
+        const localTime = new Date(result.location.localtime);
+        const currentHour = localTime.getHours();
+        
+        // Set isDarkMode based on the hour
+        if (currentHour >= 19 || currentHour < 7) {
+          setIsDarkMode(true);
+        } else {
+          setIsDarkMode(false);
+        }
       } catch (e) {
         console.error(e);
         alert('City not found. Please enter a valid city name.');
       } finally {
-        setLoading(false); // Set loading to false after fetching completes
+        setLoading(false);
       }
     };
 
@@ -41,7 +50,7 @@ function App() {
 
   return (
     <div className={`App ${isDarkMode ? 'dark' : 'light'}`}>
-      <Header isDarkMode={isDarkMode}/>
+      <Header isDarkMode={isDarkMode} setCities={setCities} setCity={setCity} />
       <SideBar tempType={tempType} cities={cities} setCity={setCity} setCities={setCities} isDarkMode={isDarkMode}/>
       <Routes>
         <Route

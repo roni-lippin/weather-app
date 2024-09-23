@@ -47,7 +47,6 @@ const GeneralCondition: React.FC<Props> = ({ title, children, isDarkMode, icon }
                 />
                 {title}
             </h3>
-            <br />
             <h4>{children}</h4>
         </div>
     );

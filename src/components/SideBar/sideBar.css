@@ -2,7 +2,7 @@
     width: 300px;
     padding: 20px;
     color: white;
-    height: 100vh;
+    height: 96%;
     position: fixed; /* Fix it to the left */
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@
 }
 
 .city-bar.light {
-    background-color: rgb(33, 79, 120);
+    background-color: rgb(47, 111, 167);
 }
 
 

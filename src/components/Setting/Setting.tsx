@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./setting.css";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
   setCity: React.Dispatch<React.SetStateAction<string>>;
   setCities: React.Dispatch<React.SetStateAction<string[]>>;
-  cities: string[]
+  cities: string[];
 }
 
 const Setting: React.FC<Props> = ({ setTempType, isDarkMode, setIsDarkMode, setCity, setCities, cities }) => {
@@ -16,13 +16,18 @@ const Setting: React.FC<Props> = ({ setTempType, isDarkMode, setIsDarkMode, setC
   const [localIsDarkMode, setLocalIsDarkMode] = useState<boolean>(isDarkMode);
   const [defaultCity, setDefaultCity] = useState<string>("");
 
+  // Update localIsDarkMode when isDarkMode prop changes
+  useEffect(() => {
+    setLocalIsDarkMode(isDarkMode);
+  }, [isDarkMode]);
+
   // Handle input changes locally
   const handleTempChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setLocalTempType(event.target.value);
   };
 
   const handleDarkModeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setLocalIsDarkMode(!localIsDarkMode);
+    setLocalIsDarkMode(event.target.checked); // Use event.target.checked to set the state
   };
 
   const handleCityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,13 +39,13 @@ const Setting: React.FC<Props> = ({ setTempType, isDarkMode, setIsDarkMode, setC
     setTempType(localTempType);
     setIsDarkMode(localIsDarkMode);
     setCity(defaultCity);
-    setCities(() => {
-        if (!cities.includes(defaultCity)) {
-            return [...cities, defaultCity]
-        }
-        return cities
-    })
-    localStorage.setItem('defaultCity', defaultCity)
+    setCities((prevCities) => {
+      if (!prevCities.includes(defaultCity)) {
+        return [...prevCities, defaultCity];
+      }
+      return prevCities;
+    });
+    localStorage.setItem('defaultCity', defaultCity);
   };
 
   return (
@@ -54,12 +59,12 @@ const Setting: React.FC<Props> = ({ setTempType, isDarkMode, setIsDarkMode, setC
         </select>
         <br />
         <br />
-        <label htmlFor="dark-mode">Dark Mode: </label>
+        <label htmlFor="dark-mode">Dark mode: </label>
         <input
           type="checkbox"
           id="dark-mode"
           name="dark-mode"
-          checked={localIsDarkMode}
+          checked={localIsDarkMode} // Use local state for checked value
           onChange={handleDarkModeChange}
         />
         <br />

@@ -19,6 +19,7 @@
 
 .settings-page.light {
     background-image: url('https://www.huaweicentral.com/wp-content/uploads/2022/06/Weather.jpg');
+    filter: opacity(90%);
 }
 
 .settings-form {

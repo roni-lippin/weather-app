@@ -11,7 +11,7 @@ interface Props {
 
 const Content: React.FC<Props> = ({ city, temp, situation, minTemp, maxTemp}) => {
     return (
-        <div className="content">
+      <div className="content">
         <div className="city-name" id="city-name-update-main">
           <h2>{city}</h2>
         </div>

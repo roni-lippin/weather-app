@@ -30,7 +30,6 @@ const MainContent: React.FC<Props> = ({ city, setCity, data, tempType, setCities
     } 
     return (
         <div className="main-content">
-            <SearchBar setCity={setCity} setCities={setCities} isDarkMode={isDarkMode}/>
             <Content
                 city={data.location.name}
                 temp={tempProps.temp}

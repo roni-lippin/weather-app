@@ -33,7 +33,7 @@ const ConditionGrid: React.FC<Props> = ({ city, data, tempType, isDarkMode })  =
             </GeneralCondition>
             <GeneralCondition title="SUNSET" isDarkMode={isDarkMode} icon='sunset'>
                 {data.forecast.forecastday[0].astro.sunset}
-                <br /> <br /><br />
+                <br /> <br />
                 Sunrise: {data.forecast.forecastday[0].astro.sunrise}
             </GeneralCondition>
             <GeneralCondition title="WIND" isDarkMode={isDarkMode} icon='wind'>
@@ -54,9 +54,9 @@ const ConditionGrid: React.FC<Props> = ({ city, data, tempType, isDarkMode })  =
             <GeneralCondition title="PRESSURE" isDarkMode={isDarkMode} icon="barometer">
                 {data.current.pressure_mb} mbar
             </GeneralCondition>
-            <GeneralCondition title="AVERAGE" isDarkMode={isDarkMode} icon="graph">
+            {/* <GeneralCondition title="AVERAGE" isDarkMode={isDarkMode} icon="graph">
                 {parseInt(tempProps.average.toString())}°
-            </GeneralCondition>
+            </GeneralCondition> */}
         </div>
     )
 }
